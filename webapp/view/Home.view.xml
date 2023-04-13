@@ -1,7 +1,95 @@
-<mvc:View controllerName="Traker.covidtraker.controller.Home"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-        <content />
+<!-- <mvc:View controllerName="Traker.covidtraker.controller.Home"
+    xmlns="sap.m"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:layout="sap.ui.layout"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:viz.data="sap.viz.ui5.data" height="100%">
+
+    
+    <Page id="page" title="title">
+     <Panel id='settingsPanel' class="panelStyle" expandable="true" expanded="true" headerText="Settings" width="auto">
+     <Button id ="btnLst" text = "Show List" press = ".onLst" icon="sap-icon://list" class="sapUiResponsiveMargin"></Button>
+     <Button id ="btnGrp" text = "Show Graph" press = ".onGrph" icon="sap-icon://business-objects-experience" class="sapUiResponsiveMargin"></Button>
+        <layout:flexContent>
+            <viz:Popover id="idPopOver"></viz:Popover>
+            <viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}"
+                height='100%' width="100%" vizType='line'>
+                <viz:dataset>
+                    <viz.data:FlattenedDataset data="{/milk}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition name="Week"
+                                value="{Week}" />
+                        </viz.data:dimensions>
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition name="Revenue"
+                                value="{Revenue}" />
+                            <viz.data:MeasureDefinition name="Cost"
+                                value="{Cost}" />
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+
+                <viz:feeds>
+                    <viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure"
+                        values="Revenue" />
+                    <viz.feeds:FeedItem id='categoryAxisFeed' uid="categoryAxis" type="Dimension"
+                        values="Week" />
+                </viz:feeds>
+            </viz:VizFrame>
+        </layout:flexContent>
+      
+    </Panel>
+    <Button id = "test" text = "test" press = ".testPress"></Button>
     </Page>
+</mvc:View> -->
+
+<mvc:View controllerName="Traker.covidtraker.controller.Home" xmlns="sap.m"
+    xmlns:viz="sap.viz.ui5.controls" xmlns:layout="sap.ui.layout"
+    xmlns:mvc="sap.ui.core.mvc" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:viz.data="sap.viz.ui5.data" height="100%">
+            <!-- <viz:Popover id="idPopOver"></viz:Popover> -->
+    <Page id ="covid" showHeader="false">        
+    <Panel class="panelStyle" expandable="true" expanded="true" headerText="Data" width="auto">
+    <content>
+    	<Button text="Latest Count by List "
+						press="onPressList"
+						ariaDescribedBy="defaultButtonDescription genericButtonDescription">
+			
+				</Button>
+				<Button type="Accept"
+						text="Latest Count by Graph"
+						press="onPressGraph"
+						ariaDescribedBy="acceptButtonDescription genericButtonDescription">
+			
+				</Button>
+        
+    </content>
+  </Panel>
+     <viz:Popover id="idPopOver"></viz:Popover>
+            <viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}"
+                height='100%' width="100%" vizType='line'>
+                <viz:dataset>
+                    <viz.data:FlattenedDataset data="{/data}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition name="day"
+                                value="{day}" />
+                        </viz.data:dimensions>
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition name="total"
+                                value="{summary/total}" />
+                       
+
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+
+                <viz:feeds>
+                    <viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure"
+                        values="total" />
+                    <viz.feeds:FeedItem id='categoryAxisFeed' uid="categoryAxis" type="Dimension"
+                        values="day" />
+                </viz:feeds>
+            </viz:VizFrame>
+  </Page>
 </mvc:View>

@@ -1,4 +1,4 @@
-/*eslint-disable semi, no-console*/
+/*eslint-disable semi, no-console, sap-no-global-variable*/
 (function (sap) {
     var getKeys = function (libOrComp, libOrCompKeysString) {
         // SAPUI5 delivered namespaces from https://ui5.sap.com/#/api/sap
