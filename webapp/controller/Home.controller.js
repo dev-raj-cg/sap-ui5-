@@ -70,11 +70,9 @@ sap.ui.define([
 
 
 
-            onLst: function(){
-                    console.log("showing list")
-            },
-            onGrph: function(){
-                console.log("showing graph")
+           
+            onPressGraph: function(){
+                this.getOwnerComponent().getRouter().navTo("Pie");
             },
             onPressList : function(){
                // console.log("test")

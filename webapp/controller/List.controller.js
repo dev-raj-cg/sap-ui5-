@@ -24,9 +24,13 @@ sap.ui.define([
                 
                 var dataPath = new JSONModel(this.dataPath);
                 this.getView().setModel(dataPath,"test")
+
+               
+                
                
             
-             }
+             },
+            
             });
         });
  

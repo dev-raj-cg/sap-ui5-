@@ -111,6 +111,13 @@
                     "target": [
                         "List"
                     ]
+                },
+                {
+                    "name": "Pie",
+                    "pattern": "pie-chart",
+                    "target": [
+                        "Pie"
+                    ]
                 }
             ],
             "targets": {
@@ -127,6 +134,13 @@
                     "clearControlAggregation": false,
                     "viewId": "List",
                     "viewName": "List"
+                },
+                "Pie": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Pie",
+                    "viewName": "Pie"
                 }
 
             }
