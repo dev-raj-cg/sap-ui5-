@@ -1,0 +1,26 @@
+<mvc:View controllerName="Traker.covidtraker.controller.List"
+ xmlns="sap.m"
+     xmlns:layout="sap.ui.layout"
+     xmlns:mvc="sap.ui.core.mvc">
+    
+    <Page  id = "list">
+   <content>
+  	<List
+		id="myList"
+		mode="MultiSelect"
+		headerText="Inverted Info State"
+		items="{test>/data/regional}">
+		<items>
+			<StandardListItem
+				title="{test>loc}"
+				description= "Total no. of Deaths: {test>deaths}"
+				info="Total no. of confirmed cases: {test>totalConfirmed}"
+				infoState="{= ${test>totalConfirmed} > 100000 ? 'Success' : 'Error'}"
+				
+				/>
+				
+		</items>
+	</List>
+</content>
+    </Page>
+</mvc:View>

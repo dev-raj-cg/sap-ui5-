@@ -45,6 +45,8 @@
 </mvc:View> -->
 
 <mvc:View controllerName="Traker.covidtraker.controller.Home" xmlns="sap.m"
+    
+    
     xmlns:viz="sap.viz.ui5.controls" xmlns:layout="sap.ui.layout"
     xmlns:mvc="sap.ui.core.mvc" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
     xmlns:viz.data="sap.viz.ui5.data" height="100%">
@@ -70,14 +72,14 @@
             <viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}"
                 height='100%' width="100%" vizType='line'>
                 <viz:dataset>
-                    <viz.data:FlattenedDataset data="{/data}">
+                    <viz.data:FlattenedDataset data="{test>/data}">
                         <viz.data:dimensions>
                             <viz.data:DimensionDefinition name="day"
-                                value="{day}" />
+                                value="{test>day}" />
                         </viz.data:dimensions>
                         <viz.data:measures>
                             <viz.data:MeasureDefinition name="total"
-                                value="{summary/total}" />
+                                value="{test>summary/total}" />
                        
 
                         </viz.data:measures>
@@ -91,5 +93,8 @@
                         values="day" />
                 </viz:feeds>
             </viz:VizFrame>
+            
+
+            
   </Page>
 </mvc:View>
