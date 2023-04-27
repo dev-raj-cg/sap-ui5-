@@ -103,6 +103,14 @@
                     "target": [
                         "TargetHome"
                     ]
+                },
+
+                {
+                    "name": "List",
+                    "pattern": "list-data",
+                    "target": [
+                        "List"
+                    ]
                 }
             ],
             "targets": {
@@ -112,7 +120,15 @@
                     "clearControlAggregation": false,
                     "viewId": "Home",
                     "viewName": "Home"
+                },
+                "List": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "List",
+                    "viewName": "List"
                 }
+
             }
         },
         "rootView": {

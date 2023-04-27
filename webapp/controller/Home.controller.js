@@ -15,8 +15,8 @@ sap.ui.define([
         "use strict";
 
         return Controller.extend("Traker.covidtraker.controller.Home", {
-            dataPath : "../model/test.json",
-            
+           dataPath : "https://api.rootnet.in/covid19-in/stats/history",
+            //dataPath : "https://api.rootnet.in/covid19-in/stats/latest",
             oVizFrame : null,
 
              onInit: function () {
@@ -57,7 +57,7 @@ sap.ui.define([
                 
     
                 var Data1 = new JSONModel(this.dataPath);
-                this.getView().setModel(Data1);
+                this.getView().setModel(Data1,"test");
                 // var oPopOver = this.getView().byId("idPopOver");
                 // oPopOver.connect(oVizFrame.getVizUid());
                 // oPopOver.setFormatString(formatPattern.STANDARDFLOAT);
@@ -76,8 +76,9 @@ sap.ui.define([
             onGrph: function(){
                 console.log("showing graph")
             },
-            testPress : function(){
-                console.log("test")
+            onPressList : function(){
+               // console.log("test")
+                this.getOwnerComponent().getRouter().navTo("List");
             }
 
         });
