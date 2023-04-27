@@ -5,13 +5,18 @@
     
     <Page  id = "list">
    <content>
+  
   	<List
+		
 		id="myList"
+		
 		mode="MultiSelect"
-		headerText="Inverted Info State"
+		headerText="Total Covid Cases - {test>/data/summary/total}"
+		footerText="Total Deaths Cases - {test>/data/summary/deaths}"
 		items="{test>/data/regional}">
 		<items>
 			<StandardListItem
+				id ="stdLstItm"
 				title="{test>loc}"
 				description= "Total no. of Deaths: {test>deaths}"
 				info="Total no. of confirmed cases: {test>totalConfirmed}"

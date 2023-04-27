@@ -1,0 +1,30 @@
+<mvc:View controllerName="Traker.covidtraker.controller.Pie" xmlns="sap.m"
+    xmlns:viz="sap.viz.ui5.controls" xmlns:layout="sap.ui.layout"
+    xmlns:mvc="sap.ui.core.mvc" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:viz.data="sap.viz.ui5.data" height="100%">
+            <viz:Popover id="idPopOverPie"></viz:Popover>
+            <viz:VizFrame id="idVizFramePie" uiConfig="{applicationSet:'fiori'}"
+                height='100%' width="100%" vizType='pie'>
+                <viz:dataset>
+                    <viz.data:FlattenedDataset data="{dataM>/data/regional}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition name="loc"
+                                value="{dataM>loc}" />
+                        </viz.data:dimensions>
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition name="totalConfirmed"
+                                value="{dataM>totalConfirmed}" />
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+
+                <viz:feeds>
+                    <viz.feeds:FeedItem uid="size" type="Measure"
+                        values="totalConfirmed" />
+                    <viz.feeds:FeedItem uid="color" type="Dimension"
+                        values="loc" />
+                </viz:feeds>
+            </viz:VizFrame>
+        
+    
+</mvc:View>

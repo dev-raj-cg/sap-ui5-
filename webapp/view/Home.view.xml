@@ -55,13 +55,13 @@
     <Panel class="panelStyle" expandable="true" expanded="true" headerText="Data" width="auto">
     <content>
     	<Button text="Latest Count by List "
-						press="onPressList"
+						press=".onPressList"
 						ariaDescribedBy="defaultButtonDescription genericButtonDescription">
 			
 				</Button>
 				<Button type="Accept"
 						text="Latest Count by Graph"
-						press="onPressGraph"
+						press=".onPressGraph"
 						ariaDescribedBy="acceptButtonDescription genericButtonDescription">
 			
 				</Button>
